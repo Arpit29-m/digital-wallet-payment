@@ -1,0 +1,42 @@
+# Compiled class files
+*.class
+
+# Maven
+target/
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# VS Code
+.vscode/
+
+# Spring Boot
+*.pid
+
+# Environment / secrets — NEVER commit these
+.env
+*.env.local
+application-local.yml
+application-prod.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
