@@ -1,6 +1,6 @@
-# Digital Wallet & P2P Payment API
+# Digital Wallet
 
-A production-ready REST API built with Spring Boot for managing digital wallets and peer-to-peer money transfers.
+A REST API built with Spring Boot for managing digital wallets and money transfers.
 
 ## Tech Stack
 
