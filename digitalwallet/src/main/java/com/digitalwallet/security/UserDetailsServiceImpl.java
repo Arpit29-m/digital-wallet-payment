@@ -9,13 +9,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Spring Security calls this during form-login and token validation to load
- * the user by their identifier (email in our case).
- *
- * The @Transactional here is important — User.roles is EAGER but we still
- * want a clean session boundary when this gets called from the JWT filter.
- */
+
 @Service
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {

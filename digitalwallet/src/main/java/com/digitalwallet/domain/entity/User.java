@@ -13,11 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * Core user entity. We deliberately keep auth concerns (password, roles)
- * here rather than a separate UserDetails table — simpler join path and
- * for a wallet API the user IS the account holder.
- */
+
 @Entity
 @Table(
     name = "users",
@@ -70,7 +66,6 @@ public class User extends BaseEntity {
     @Builder.Default
     private UserStatus status = UserStatus.PENDING_VERIFICATION;
 
-    // Lazy is fine here; we only need roles on auth and admin calls
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "user_roles",
@@ -80,13 +75,12 @@ public class User extends BaseEntity {
     @Builder.Default
     private Set<Role> roles = new HashSet<>();
 
-    // A user can have multiple wallets (e.g. USD + EUR in the future)
+
     @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, orphanRemoval = true)
     @Builder.Default
     private List<Wallet> wallets = new ArrayList<>();
     public Wallet wallet;
 
-    // Convenience helpers so callers don't have to mess with the collection
     public void addRole(Role role) {
         this.roles.add(role);
     }

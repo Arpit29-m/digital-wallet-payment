@@ -4,10 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 
-/**
- * Payload for POST /wallets — create an additional wallet for the user.
- * (Their first wallet is auto-created on registration.)
- */
+
 public record CreateWalletRequest(
 
     @NotBlank(message = "Currency is required")

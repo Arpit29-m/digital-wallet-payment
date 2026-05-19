@@ -9,10 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
-/**
- * All entities extend this so we get created/updated timestamps for free.
- * The @EntityListeners hook is what actually makes auditing work at runtime.
- */
+
 @Getter
 @Setter
 @MappedSuperclass

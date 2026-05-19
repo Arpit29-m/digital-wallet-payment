@@ -3,12 +3,6 @@ package com.digitalwallet.domain.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-/**
- * Simple role entity. We keep it in the DB rather than hardcoding so
- * an admin panel can assign roles without a redeploy.
- *
- * Values expected: ROLE_USER, ROLE_ADMIN
- */
 @Entity
 @Table(name = "roles")
 @Getter

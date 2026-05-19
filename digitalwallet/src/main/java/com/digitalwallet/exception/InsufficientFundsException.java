@@ -2,11 +2,7 @@ package com.digitalwallet.exception;
 
 import java.math.BigDecimal;
 
-/**
- * Thrown when a wallet doesn't have enough balance for a transaction.
- * We include both the requested and available amounts so the error
- * response can show the client exactly what happened.
- */
+
 public class InsufficientFundsException extends RuntimeException {
 
     private final BigDecimal requestedAmount;

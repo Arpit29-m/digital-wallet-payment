@@ -79,8 +79,3 @@ src/main/java/com/digitalwallet/
 | GET | `/transactions` | List my transactions |
 | GET | `/transactions/{reference}` | Get transaction by reference |
 
-## Phases
-
-- [x] **Phase 1** — Project setup, domain model, exception handling
-- [ ] **Phase 2** — Security config & JWT
-- [ ] **Phase 3** — Business logic and transfer controllers

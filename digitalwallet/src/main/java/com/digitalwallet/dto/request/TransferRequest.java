@@ -8,12 +8,7 @@ import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
-/**
- * Payload for POST /transfers
- *
- * The sender is always the authenticated user — we never trust a "from" field
- * in the request body. sourceWalletId ties the transfer to one of their wallets.
- */
+
 public record TransferRequest(
 
     @NotNull(message = "Source wallet ID is required")

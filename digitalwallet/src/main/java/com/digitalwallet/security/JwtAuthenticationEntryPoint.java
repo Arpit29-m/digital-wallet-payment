@@ -14,12 +14,7 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
-/**
- * By default Spring Security would send a 302 redirect to /login when a
- * request hits a secured endpoint without a token. That's wrong for a REST API.
- *
- * This entry point sends a proper 401 JSON response instead.
- */
+
 @Slf4j
 @Component
 @RequiredArgsConstructor

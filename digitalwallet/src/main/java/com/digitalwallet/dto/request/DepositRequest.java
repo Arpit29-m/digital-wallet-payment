@@ -7,9 +7,7 @@ import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
-/**
- * Payload for POST /wallets/{id}/deposit
- */
+
 public record DepositRequest(
 
     @NotNull(message = "Amount is required")

@@ -3,9 +3,7 @@ package com.digitalwallet.dto.request;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-/**
- * Payload for POST /auth/login
- */
+
 public record LoginRequest(
 
     @NotBlank(message = "Email is required")

@@ -7,10 +7,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-/**
- * What we send back for wallet reads. Never expose the internal DB id
- * of the owner — walletNumber is the public identifier.
- */
+
 public record WalletResponse(
     Long id,
     String walletNumber,
@@ -22,7 +19,6 @@ public record WalletResponse(
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     LocalDateTime updatedAt
 ) {
-    // Mapping from entity to DTO lives here — keeps mappers out of the critical path
     public static WalletResponse from(Wallet wallet) {
         return new WalletResponse(
             wallet.getId(),

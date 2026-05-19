@@ -9,14 +9,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Represents a user's wallet. Balance is always BigDecimal — never float/double
- * for anything money-related. The currency field is a plain string for now
- * (ISO 4217 code like "USD", "INR") but we could swap it for an enum later.
- *
- * The wallet number is a human-readable unique identifier used in transfers
- * so users don't have to share their internal DB id.
- */
+
 @Entity
 @Table(
     name = "wallets",

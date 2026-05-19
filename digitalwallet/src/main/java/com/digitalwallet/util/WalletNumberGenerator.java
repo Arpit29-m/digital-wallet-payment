@@ -6,14 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;
 
-/**
- * Generates unique, human-readable wallet numbers in the format: WLT-XXXXXXXX
- * (e.g. WLT-48392017)
- *
- * Uses SecureRandom to avoid predictable sequential IDs that would let
- * someone enumerate wallets. Retries up to 5 times on collision (extremely
- * unlikely in practice, but good to be defensive).
- */
 @Component
 @RequiredArgsConstructor
 public class WalletNumberGenerator {
@@ -32,7 +24,6 @@ public class WalletNumberGenerator {
                 return candidate;
             }
         }
-        // Astronomically unlikely, but throw rather than silently return a duplicate
         throw new IllegalStateException("Failed to generate a unique wallet number after " + MAX_ATTEMPTS + " attempts");
     }
 

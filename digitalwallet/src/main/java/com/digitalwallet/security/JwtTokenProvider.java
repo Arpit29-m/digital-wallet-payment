@@ -13,13 +13,7 @@ import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.stream.Collectors;
 
-/**
- * Handles all JWT operations: generation, validation, and claim extraction.
- *
- * We embed the user's roles directly in the token so the filter chain
- * doesn't need a DB hit on every request. Trade-off: revoked roles won't
- * take effect until the token expires — acceptable for a 24h expiry.
- */
+
 @Slf4j
 @Component
 public class JwtTokenProvider {

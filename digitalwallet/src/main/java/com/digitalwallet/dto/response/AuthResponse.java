@@ -5,11 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 import java.util.Set;
 
-/**
- * Returned from both /auth/register and /auth/login.
- * Contains the access token, refresh token, and a minimal user summary
- * so the client doesn't need a separate /me call right after login.
- */
+
 public record AuthResponse(
     String accessToken,
     String refreshToken,

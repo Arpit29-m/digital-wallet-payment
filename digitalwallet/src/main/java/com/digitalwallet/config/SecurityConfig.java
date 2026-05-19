@@ -20,14 +20,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-/**
- * Spring Security configuration for the wallet API.
- *
- * Key choices:
- * - STATELESS session — no server-side session, all state in the JWT
- * - CSRF disabled — standard for token-based stateless REST APIs
- * - @EnableMethodSecurity for @PreAuthorize on individual endpoints
- */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(prePostEnabled = true)
@@ -58,11 +50,8 @@ public class SecurityConfig {
                 .requestMatchers(HttpMethod.GET, "/actuator/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
             );
-
-        // Wire up our custom JWT filter before the standard username/password filter
         http.addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 
-        // Set our custom auth provider (BCrypt + UserDetailsService)
         http.authenticationProvider(authenticationProvider());
 
         return http.build();
@@ -83,7 +72,6 @@ public class SecurityConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // BCrypt strength 12 — good balance of security vs. login latency
         return new BCryptPasswordEncoder(12);
     }
 }

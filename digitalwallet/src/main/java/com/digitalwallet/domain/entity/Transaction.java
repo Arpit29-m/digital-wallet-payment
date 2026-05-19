@@ -9,16 +9,7 @@ import lombok.*;
 
 import java.math.BigDecimal;
 
-/**
- * Immutable record of every money movement in the system.
- *
- * Design note: we store both sourceWallet and destinationWallet as nullable
- * because DEPOSIT only has a destination and WITHDRAWAL only has a source.
- * The TransactionType tells you which fields to expect.
- *
- * The reference field is a UUID we generate per-transaction so the client
- * can use it for idempotency checks and customer support lookups.
- */
+
 @Entity
 @Table(
     name = "transactions",

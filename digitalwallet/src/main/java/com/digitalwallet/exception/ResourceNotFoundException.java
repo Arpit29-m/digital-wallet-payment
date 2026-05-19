@@ -3,11 +3,6 @@ package com.digitalwallet.exception;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-/**
- * Thrown when a requested resource doesn't exist.
- * Maps to 404 automatically via @ResponseStatus, but the
- * GlobalExceptionHandler will pick this up first for consistent JSON bodies.
- */
 @ResponseStatus(HttpStatus.NOT_FOUND)
 public class ResourceNotFoundException extends RuntimeException {
 

@@ -14,15 +14,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
-/**
- * Central place for all exception-to-HTTP-response mappings.
- *
- * The goal is that nothing outside this class ever calls ResponseEntity.badRequest()
- * or sets an error status directly. Controllers just throw, this handles it.
- *
- * Ordering matters — Spring picks the most specific handler available,
- * so subclasses should come before their parents in the method list.
- */
+
 @Slf4j
 @RestControllerAdvice
 public class GlobalExceptionHandler {

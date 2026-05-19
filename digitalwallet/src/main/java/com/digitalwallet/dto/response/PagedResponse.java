@@ -4,10 +4,7 @@ import org.springframework.data.domain.Page;
 
 import java.util.List;
 
-/**
- * Generic envelope for any paginated list response.
- * Keeps the pagination metadata consistent across all list endpoints.
- */
+
 public record PagedResponse<T>(
     List<T> content,
     int page,

@@ -16,13 +16,7 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
 
-/**
- * Intercepts every request, pulls the JWT from the Authorization header,
- * validates it, and stuffs the authenticated principal into the SecurityContext.
- *
- * Extends OncePerRequestFilter so it won't accidentally run twice on
- * forwarded requests — a common gotcha with GenericFilterBean.
- */
+
 @Slf4j
 @Component
 @RequiredArgsConstructor

@@ -10,13 +10,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-/**
- * Adapts our User entity to Spring Security's UserDetails interface.
- *
- * We keep a reference to the full User so downstream code (e.g. controllers
- * that need the user's DB id) can call getPrincipal() and cast to this class
- * without an extra repository lookup.
- */
 @Getter
 public class UserPrincipal implements UserDetails {
 

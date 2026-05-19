@@ -5,9 +5,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-/**
- * Payload for POST /auth/register
- */
+
 public record RegisterRequest(
 
     @NotBlank(message = "First name is required")
